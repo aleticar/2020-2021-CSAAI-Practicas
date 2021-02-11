@@ -10,3 +10,5 @@ Probando VScode...
 *****************
 ***
 ++
+
+![](Ejercicio2-img1.gif)
