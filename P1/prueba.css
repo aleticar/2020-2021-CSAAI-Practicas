@@ -11,3 +11,7 @@ h1{
     background-color: lightpink;
     color: lightskyblue;
 }
+#especial{/*Con id y prioridad*/
+    background-color: lightyellow;
+    color: lime;
+}
