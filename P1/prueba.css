@@ -1,17 +1,38 @@
 body{
 
-background-color: lightblue;
-color:lightgreen;
-
+/* background-color: lightblue;
+color:lightgreen; */
+padding: 0px;
+margin: 10px;
+border: solid;
+border-color: brown;
 
 
 
 }
 h1{
+    padding: 0px;
+    margin: 10px;
+    border: solid;
+    border-color: chartreuse;
     background-color: lightpink;
     color: lightskyblue;
 }
 #especial{/*Con id y prioridad*/
     background-color: lightyellow;
     color: lime;
+}
+.migrupo{/*Con class */
+    background-color: maroon;
+    color: mediumpurple;
+
+
+    /*Regla 1: Si se contradice dos reglas del mismo nivel, prevalece la ultima.
+      Regla 2: Prevalece Style dentro de p h....
+      Regla 3: Si a un elemento no le defino estilo, hereda la que le pongamos al body o del mas cercano
+      Regla 4: style>id>clase>general
+      alt+shit+a(para comentar) 
+
+
+    */
 }
