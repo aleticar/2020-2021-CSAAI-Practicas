@@ -1,20 +1,26 @@
-body{
-    color:white;
-    background-image: url("goku.jpg");
-}
-
-.letra{/*Con class */
-    
-    }
-
-@font-face /* Para poner estilo de lera*/
+font-face /* Para poner estilo de lera*/
     {
        font-family: "Saiyan";
        src: url("Saiyan-Sans.ttf");
     }
-    h1{
+body{
+    color:rgb(0, 255, 255);
+    padding: 10px;
+    margin: 50px;
+    background-image: url("goku.jpg");
+    }
+
+.h{/*Con class */
         font-family: "Saiyan";
         font-size: 50px;
-  text-align: center
+        text-align: center;
+        background-color: rgba(255, 196, 0, 0.5);
+        border: #ffb300 10px double;
+        border-bottom: none;
+        padding: 10px;
+        margin: 50px;
+        margin-bottom: 0px;
     }
-    
+    }
+
+
