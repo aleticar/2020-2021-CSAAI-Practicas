@@ -1,0 +1,19 @@
+body{
+
+    background-color: lightblue;
+    color: blue;
+    padding: 0px;
+    margin: 10px;
+    border: solid;
+    border-color: brown;
+}
+h1{
+    color: white;
+    padding: 0px;
+    margin: 10px;
+    border: solid;
+    border-color: chartreuse;
+    background-color: lightpink;
+    
+
+}
