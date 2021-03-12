@@ -4,33 +4,60 @@
        src: url("Saiyan-Sans.ttf");
     }
 body{
-    color:rgb(157, 255, 0);
+    color:rgb(10, 10, 10);
     padding: 10px;
-    margin: 50px;
+    margin: 0px;
+    text-align: center;
     background-image: url("goku.jpg");
     }
+.h2{
 
+    font-family: "Saiyan";
+        font-size: 60px;
+        text-align: center;
+        background-color: rgba(0, 68, 255, 0.5);
+        border: #ff7b00 10px double;
+        
+        padding: 10px;
+        margin: 50px;
+        margin-bottom: 0px;
+}
 .h{/*Con class */
     
         font-family: "Saiyan";
         font-size: 50px;
         text-align: center;
         background-color: rgba(0, 153, 255, 0.5);
-        border: #ffb300 10px double;
+        border: #ff7b00 10px double;
+        align-content:center
         border-bottom: none;
         padding: 10px;
-        margin: 50px;
+        margin: 0px;
         margin-bottom: 0px;
+        margin-left: 50px;
+        margin-right: 1200px;
     }
 .margen{
-    font-size: 50px;
+    font-size: 22px;
     text-align: center;
-    background-color: rgba(0, 153, 255, 0.5);
-    border: #ffb300 10px double;
-    border-bottom: none;
+    background-color: rgba(0, 120, 255, 0.7);
+    border: #ff7b00 10px double;
+    
     padding: 10px;
-    margin: 50px;
+    margin: 0px;
     margin-bottom: 0px;
+    margin-left: 50px;
+    margin-right: 1200px;
+/* 
+    padding: 10px;
+    display: inline-flex;
+    width: 95%;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center; */
 
 
 }
