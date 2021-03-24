@@ -15,7 +15,7 @@ body{
     font-family: "Saiyan";
         font-size: 60px;
         text-align: center;
-        background-color: rgba(0, 68, 255, 0.5);
+        background-color: rgba(0, 100, 255, 0.7);
         border: #ff7b00 10px double;
         
         padding: 10px;
@@ -25,17 +25,17 @@ body{
 .h{/*Con class */
     
         font-family: "Saiyan";
-        font-size: 50px;
+        font-size: 60px;
         text-align: center;
-        background-color: rgba(0, 153, 255, 0.5);
+        background-color: rgba(0, 100, 255, 0.7);
         border: #ff7b00 10px double;
-        align-content:center
+        
         border-bottom: none;
         padding: 10px;
         margin: 0px;
         margin-bottom: 0px;
         margin-left: 50px;
-        margin-right: 1200px;
+        margin-right: 12000px;
     }
 .margen{
     font-size: 22px;
