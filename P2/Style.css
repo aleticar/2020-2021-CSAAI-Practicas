@@ -14,7 +14,7 @@ body{
     padding: 0px;
 }
 
-    .h1 {
+.h1 {
         font-size: 100px;
         text-align: center;
         padding: 10px;
@@ -22,5 +22,30 @@ body{
         margin-bottom: 0px;
         color:#9a27a9;
         text-shadow:#5804f3 3px 0;
-        /*-webkit-text-stroke: 1px #533E03;*/
+       
         }
+
+        .resultado{
+            background: white;
+            font-size: 30px;
+            border-bottom:double ;
+            border-top-left-radius: 320px;
+            border-top-right-radius: 320px;
+            border: solid 20px rgba(1,1,1,0.8);
+            border-bottom: 10px rgba(1,1,1,0.7);
+            padding: 10px;
+            padding-top: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 38px;
+            height: 30px;
+            background-color: rgba(255,255,255,0.5);
+            margin-left: auto;
+            margin-right: auto;
+            width: 250px;
+          }
+.l1{
+
+
+}
+          
