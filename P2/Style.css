@@ -1,0 +1,26 @@
+body{
+
+    background-image: url("Milky_Way_Sky_Coast_Night_567500_1920x1080.jpg");
+    text-align: center;
+}
+
+.p{
+    /*background:  grey#380303;*/
+    border-radius: 20px;
+    text-align: center;
+    
+    font-size: 30px;
+    width: 30%;
+    padding: 0px;
+}
+
+    .h1 {
+        font-size: 100px;
+        text-align: center;
+        padding: 10px;
+        margin: 50px;
+        margin-bottom: 0px;
+        color:#9a27a9;
+        text-shadow:#5804f3 3px 0;
+        /*-webkit-text-stroke: 1px #533E03;*/
+        }
