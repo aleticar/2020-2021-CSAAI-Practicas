@@ -3,13 +3,15 @@
 console.log("Ejecutando JS...");
 
 //-- Acceder a los elementos del DOM
-const display = document.getElementById("display");
-const boton = document.getElementById("boton");
-const delet=document.getElementById("delete");
-const clear=document.getElementById("clear");
-const exp=document.getElementById("exp");
-const ans=document.getElementById("ans");
-const equal=document.getElementById("equal");
+const OPCIONES={
+display : document.getElementById("display"),
+boton : document.getElementById("boton"),
+delet:document.getElementById("delete"),
+clear:document.getElementById("clear"),
+exp:document.getElementById("exp"),
+ans:document.getElementById("ans"),
+igual:document.getElementById("equal")
+}
 
 let numeros  = document.getElementsByClassName("numeros");
 
@@ -24,9 +26,9 @@ let resultado=RESULT.Inicio;
 //-- Manejador de posiciones
 function operar(digito){
     //depeende de lo que llegue a la funcion opera de una manera u otra
-    if (resultado == RESULT.INIT) {
+    if (resultado == RESULT.Inicio) {
         display.innerHTML = digito;
-        resultado == RESULT.OP1;
+        resultado == RESULT.numero1;
       }else if (resultado == RESULT.numero1){
         display.innerHTML += digito;
       }else if (resultado == RESULT.operacion) {
@@ -56,23 +58,23 @@ for (i=0; i<numeros.length; i++){
         }
   }
   
-  //elevar
-  equal.onclick = () => {
-   if(resultado == RESULT.OP1 ||  resultado == RESULT.OP2){
-      display.innerHTML = eval(display.innerHTML);
-      resultado = RESULT.OP1;
-    }
-  }
   
-  // Borrar 
-  delet.onclick = () => {
-    display.innerHTML = display.innerHTML.slice(0,-1);
-  }
-  
-  //Reiniciar a 0
-  clear.onclick = () => {
-    display.innerHTML = "0";
-      console.log("clear");
-      resultado = RESULT.INIT;
-  }
-  
+  //coger el digito del boton
+  igual.onclick = () => {
+    if(resultado == RESULT.OP1 ||  resultado == RESULT.OP2){
+       display.innerHTML = eval(display.innerHTML);
+       resultado = RESULT.OP1;
+     }
+   }
+   
+   // Borrar 
+   delet.onclick = () => {
+     display.innerHTML = display.innerHTML.slice(0,-1);
+   }
+   
+   //Reiniciar a 0
+   clear.onclick = () => {
+     display.innerHTML = "0";
+       console.log("clear");
+       resultado = RESULT.INIT;
+   }
