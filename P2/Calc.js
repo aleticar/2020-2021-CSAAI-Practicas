@@ -3,18 +3,21 @@
 console.log("Ejecutando JS...");
 
 //-- Acceder a los elementos del DOM
-const OPCIONES={
+const gui={
 display : document.getElementById("display"),
 boton : document.getElementById("boton"),
-delet:document.getElementById("delete"),
-clear:document.getElementById("clear"),
+/*delet:document.getElementById("delete"),
+clear:document.getElementById("clear"),*/
 exp:document.getElementById("exp"),
 ans:document.getElementById("ans"),
-igual:document.getElementById("equal")
+
 }
+const igual=document.getElementById("equal");
+const delet=document.getElementById("delete");
+const clear=document.getElementById("clear");
 
 let numeros  = document.getElementsByClassName("numeros");
-
+//posiciones
 const RESULT={
 Inicio:0,
 numero1:1,
@@ -43,7 +46,7 @@ function operar(digito){
 //Bucle
 for (i=0; i<numeros.length; i++){
     numeros[i].onclick = (ev)=>{
-      resultado(ev.target.value);
+      operar(ev.target.value);
     }
   }
   
@@ -61,20 +64,20 @@ for (i=0; i<numeros.length; i++){
   
   //coger el digito del boton
   igual.onclick = () => {
-    if(resultado == RESULT.OP1 ||  resultado == RESULT.OP2){
+    if(resultado == RESULT.numero1 ||  resultado == RESULT.numero2){
        display.innerHTML = eval(display.innerHTML);
-       resultado = RESULT.OP1;
+       resultado = RESULT.numero1;
      }
    }
    
    // Borrar 
-   delet.onclick = () => {
+   igual.onclick = () => {
      display.innerHTML = display.innerHTML.slice(0,-1);
    }
    
    //Reiniciar a 0
-   clear.onclick = () => {
+   igual.onclick = () => {
      display.innerHTML = "0";
        console.log("clear");
-       resultado = RESULT.INIT;
+       resultado = RESULT.Inicio;
    }
