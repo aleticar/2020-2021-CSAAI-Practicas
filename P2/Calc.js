@@ -3,18 +3,18 @@
 console.log("Ejecutando JS...");
 
 //-- Acceder a los elementos del DOM
-const gui={
-display : document.getElementById("display"),
-boton : document.getElementById("boton"),
+
+display = document.getElementById("display")
+boton = document.getElementById("boton")
 /*delet:document.getElementById("delete"),
 clear:document.getElementById("clear"),*/
-exp:document.getElementById("exp"),
-ans:document.getElementById("ans"),
+exp=document.getElementById("exp")
+ans=document.getElementById("ans")
 
-}
-const igual=document.getElementById("equal");
-const delet=document.getElementById("delete");
-const clear=document.getElementById("clear");
+
+igual=document.getElementById("equal")
+delet=document.getElementById("delete")
+clear=document.getElementById("clear")
 
 let numeros  = document.getElementsByClassName("numeros");
 //posiciones
@@ -71,13 +71,13 @@ for (i=0; i<numeros.length; i++){
    }
    
    // Borrar 
-   igual.onclick = () => {
-     display.innerHTML = display.innerHTML.slice(0,-1);
-   }
+   clear.onclick = () => {
+    display.innerHTML = "0";
+  }
    
    //Reiniciar a 0
-   igual.onclick = () => {
+   /*igual.onclick = () => {
      display.innerHTML = "0";
        console.log("clear");
        resultado = RESULT.Inicio;
-   }
+   }*/
