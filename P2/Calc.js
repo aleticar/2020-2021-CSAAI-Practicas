@@ -18,25 +18,56 @@ igual=document.getElementById("equal")
 delet=document.getElementById("delete")
 clear=document.getElementById("clear")
 
-numeros  = document.getElementsByClassName("numeros");
 
-const ESTADO = {
+
+const RESULT = {
   INIT: 0,
   OP1: 1,
   OPERATION: 2,
   OP2: 3,
 }
 
+//-- Variable de estado
+//-- Por defecto su valor será el del estado inicial
+let estado = RESULT.INIT;
+
+function number(digito)
+{
+  //-- Segun el estado hacemos una cosa u otra
+  if (estado == RESULT.INIT) {
+    display.innerHTML = digito;
+    estado == RESULT.OP1;
+  }else if (estado == RESULT.OP1){
+    display.innerHTML += digito;
+  }else if (estado== RESULT.OPERATION) {
+    display.innerHTML += digito;
+    estado == RESULT.numero2;
+  }else if (estado == RESULT.OP2){
+    display.innerHTML += digito;
+  }
+  else {
+       
+        //--En cualquier otro estado lo añadimos
+        display.innerHTML += ev.target.value;
+
+        //-- Y nos quedamos en el mismo estado
+        //-- Ojo! Este ejemplo sólo implementa el primer
+        //-- estado del diagrama. Habría que tener en 
+        //-- cuenta el resto... lo debes hacer en tu práctica
+    } 
+
+
+
+}
+numeros  = document.getElementsByClassName("numeros");
 
 for (let boton of numeros) {
 
   //-- Se ejecuta cuando se pulsa un boton
   //-- que es un dígito
-  boton.onclick = (ev) => {
-      display.innerHTML += ev.target.value;
-      console.log("Numero");
+  boton.onclick = numeros;
   }
-}
+
 
 boton1.onclick = () => {
   display.innerHTML += "1";
