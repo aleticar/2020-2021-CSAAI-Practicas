@@ -9,6 +9,7 @@ suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 
+
 //-- Funciones de retrollamada de los botones
 //-- Cada vez que se aprieta un boton se actua
 //-- sobre la cadena: añadiendo digito, operador +

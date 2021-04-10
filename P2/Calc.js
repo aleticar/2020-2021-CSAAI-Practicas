@@ -6,18 +6,68 @@ console.log("Ejecutando JS...");
 
 display = document.getElementById("display")
 boton = document.getElementById("boton")
+boton1 = document.getElementById("boton1")
+boton2 = document.getElementById("boton2")
 /*delet:document.getElementById("delete"),
 clear:document.getElementById("clear"),*/
 exp=document.getElementById("exp")
 ans=document.getElementById("ans")
 
-
+suma = document.getElementById("suma")
 igual=document.getElementById("equal")
 delet=document.getElementById("delete")
 clear=document.getElementById("clear")
 
-let numeros  = document.getElementsByClassName("numeros");
+numeros  = document.getElementsByClassName("numeros");
+
+const ESTADO = {
+  INIT: 0,
+  OP1: 1,
+  OPERATION: 2,
+  OP2: 3,
+}
+
+
+for (let boton of numeros) {
+
+  //-- Se ejecuta cuando se pulsa un boton
+  //-- que es un dígito
+  boton.onclick = (ev) => {
+      display.innerHTML += ev.target.value;
+      console.log("Numero");
+  }
+}
+
+boton1.onclick = () => {
+  display.innerHTML += "1";
+}
+
+//-- Insertar digito 2
+boton2.onclick = () => {
+  display.innerHTML += "2";
+}
+
+//-- Insertar simbolo de sumar
+suma.onclick = () => {
+  display.innerHTML += "+";
+}
+
+//-- Evaluar la expresion
+igual.onclick = () => {
+  display.innerHTML = eval(display.innerHTML);
+}
+
+//-- Poner a cero la expresion
+clear.onclick = () => {
+  display.innerHTML = "0";
+}
+
+
+
+
+
 //posiciones
+/*
 const RESULT={
 Inicio:0,
 numero1:1,
