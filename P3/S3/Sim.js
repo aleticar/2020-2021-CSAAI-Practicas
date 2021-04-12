@@ -13,12 +13,21 @@ let x = 0;
 let y = 10;
 
 //-- Velocidad horizontal del objeto
-let velx = 1;
+let velx = 3;
 
 //-- Funcion principal de animacion
 function update() 
 {
   console.log("test");
+//Para que rebote
+  //if (x >= canvas.width) {
+   // velx = -velx;}
+  
+
+   // Para que rebote tanto a la izquierda como a la derecha
+   if (x < 0 || x >= (canvas.width - 20) ) {
+    velx = -velx;}
+
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
