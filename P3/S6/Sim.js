@@ -1,10 +1,14 @@
 console.log("Ejecutando JS...");
 
 const canvas = document.getElementById("canvas");
-
+const display = document.getElementById("display");
 //-- Definir el tamaño del convas
 canvas.width = 300;
 canvas.height = 100
+
+const raqueta = new Audio("P3_L9_pong-raqueta");
+const rebote = new Audio("P3_L9_pong-rebote");
+
 
 const ctx = canvas.getContext("2d");
 boton = document.getElementById("boton")
@@ -14,12 +18,12 @@ let y = 10;
 
 //-- Velocidad horizontal del objeto
 let velx = 0;
-let x2 = 0;
-let y2 = 10;
+let x2 = 145;
+let y2 = 50;
 
 //-- Velocidad horizontal del objeto
-let velx2 = 2;
-let vely2 = 2;
+let velx2 = 0;
+let vely2 = 0;
 
 //-- Funcion principal de animacion
 function update() 
@@ -34,6 +38,7 @@ function update()
    if (x < 0 || x >= (canvas.width - 20) ) {
     velx = -velx;}
 
+    
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
@@ -43,7 +48,7 @@ function update()
 
 //-- Funcion principal de animacion
 
-  console.log("test");
+  
 //Para que rebote
   //if (x >= canvas.width) {
    // velx = -velx;}
@@ -106,3 +111,4 @@ ctx.closePath();
 requestAnimationFrame(update);}
 
 update();
+
