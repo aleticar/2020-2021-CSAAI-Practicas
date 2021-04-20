@@ -9,12 +9,12 @@ canvas.height = 100
 const ctx = canvas.getContext("2d");
 
 
-let x = 0;
-let y = 10;
+let x2 = 0;
+let y2 = 10;
 
 //-- Velocidad horizontal del objeto
-let velx = 2;
-let vely = 2;
+let velx2 = 2;
+let vely2 = 2;
 
 //-- Funcion principal de animacion
 function update() 
@@ -26,19 +26,19 @@ function update()
   
 
    // Para que rebote tanto a la izquierda como a la derecha
-   if (x < 0 || x >= (canvas.width - 20) ) {
-    velx = -velx;}
+   if (x2 < 0 || x2 >= (canvas.width - 20) ) {
+    velx2 = -velx2;}
 
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
-  x = x + velx;
+  x2 = x2 + velx2;
 
 
-  if (y <= 0 || y > 80) {
-    vely = -vely;
+  if (y2 <= 0 || y2 > 80) {
+    vely2 = -vely2;
   }
-  y = y + vely;
+  y2 = y2 + vely2;
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -48,7 +48,7 @@ function update()
 
 ctx.beginPath();
 // (x,y)posicion  (largo,ancho)
-ctx.arc(x, y, 10, 0, 2 * Math.PI);
+ctx.arc(x2, y2, 10, 0, 2 * Math.PI);
 
 ctx.fillStyle="red";
 //dar color
