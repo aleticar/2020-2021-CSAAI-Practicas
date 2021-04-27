@@ -90,7 +90,7 @@ igual.onclick = () => {
 
 //-- Poner a cero la expresion
 clear.onclick = () => {
-  display.innerHTML = "0";
+  display.innerHTML = "";
 }
 
 

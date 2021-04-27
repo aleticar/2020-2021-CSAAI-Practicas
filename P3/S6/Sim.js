@@ -2,16 +2,20 @@ console.log("Ejecutando JS...");
 
 const canvas = document.getElementById("canvas");
 const display = document.getElementById("display");
-//-- Definir el tamaño del convas
-canvas.width = 300;
-canvas.height = 100
 
-const raqueta = new Audio("P3_L9_pong-raqueta");
-const rebote = new Audio("P3_L9_pong-rebote");
+//-- Definir el tamaño del convas
+canvas.width = 800;
+canvas.height = 400
+
+//const raqueta = new Audio("P3_L9_pong-raqueta");
+//const rebote = new Audio("P3_L9_pong-rebote");
 
 
 const ctx = canvas.getContext("2d");
 boton = document.getElementById("boton")
+boton2 = document.getElementById("boton2")
+boton3 = document.getElementById("boton3")
+boton4 = document.getElementById("boton4")
 
 let x = 120;
 let y = 10;
@@ -24,6 +28,27 @@ let y2 = 50;
 //-- Velocidad horizontal del objeto
 let velx2 = 0;
 let vely2 = 0;
+//empezar
+boton.onclick = () => {
+  velx=5;
+  velx2 = 2;
+ vely2 = 2;
+}
+//Parar
+boton2.onclick = () => {
+  velx=0;
+  velx2 = 0;
+ vely2 = 0;
+}
+//Boton para mover la barra a la izquierda
+boton3.onclick = () => {
+  x = x + velx;
+  console.log("Izquierda")
+}
+//Boton para mover a la derecha
+boton4.onclick = () => {
+  x = x - velx;
+}
 
 //-- Funcion principal de animacion
 function update() 
@@ -42,7 +67,7 @@ function update()
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
-  x = x + velx;
+  //x = x + velx;
 
 
 
