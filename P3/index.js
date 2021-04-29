@@ -79,7 +79,13 @@ for (let i = 0; i < LADRILLO.F; i++) {
       };
   }
 }
+window.onkeydown = (e)=> {
+  display.innerHTML = `Tecla: ${e.key}. Código: ${e.keyCode}`
+}
 
+window.onkeyup = (e) => {
+  display.innerHTML = ""
+}
 
 
 //-- Funcion principal de animacion
@@ -190,7 +196,12 @@ for (let i = 0; i < LADRILLO.F; i++) {
 //Romper ladrillos
 for (let i = 0; i < LADRILLO.F; i++) {
   for (let j = 0; j < LADRILLO.C; j++) {
-    
+    if(ladrillos[i][j]){
+      //velx = -velx;
+      //velx2 = velx2;
+
+
+    }
 
   }
 }
@@ -198,6 +209,7 @@ requestAnimationFrame(update);
 }
 
 update();
+
 
 
 
