@@ -29,11 +29,11 @@ let y2 = 350;
 let velx2 = 0;
 let vely2 = 0;
 //empezar
-boton.onclick = () => {
+/*boton.onclick = () => {
   velx=25;
   velx2 = 2;
  vely2 = 2;
-}
+}*/
 //Parar
 boton2.onclick = () => {
   velx=0;
@@ -80,12 +80,16 @@ for (let i = 0; i < LADRILLO.F; i++) {
   }
 }
 window.onkeydown = (e)=> {
-  display.innerHTML = `Tecla: ${e.key}. Código: ${e.keyCode}`
+  A = `Tecla: ${e.key}. Código: ${e.keyCode}`
+  
+  if (e.keyCode==32){
+    velx=25;
+    velx2 = 2;
+   vely2 = 2;
+  }
 }
 
-window.onkeyup = (e) => {
-  display.innerHTML = ""
-}
+
 
 
 //-- Funcion principal de animacion
@@ -196,9 +200,15 @@ for (let i = 0; i < LADRILLO.F; i++) {
 //Romper ladrillos
 for (let i = 0; i < LADRILLO.F; i++) {
   for (let j = 0; j < LADRILLO.C; j++) {
-    if(ladrillos[i][j]){
-      //velx = -velx;
-      //velx2 = velx2;
+    if(ladrillos[i][j].visible=true){
+      if(ladrillos[i][j]==x2){
+        ladrillos[i][j].visible = false;
+
+      }
+      //
+
+      //velx2 = -velx2;
+      //vely2 = -vely2;
 
 
     }
