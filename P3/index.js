@@ -188,7 +188,7 @@ for (let i = 0; i < LADRILLO.F; i++) {
   for (let j = 0; j < LADRILLO.C; j++) {
 
     //-- Si el ladrillo es visible se pinta
-    if (ladrillos[i][j].visible) {
+    if (LADRILLO.visible==true) {
       ctx.beginPath();
       ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
       ctx.fillStyle = 'green';
@@ -198,9 +198,9 @@ for (let i = 0; i < LADRILLO.F; i++) {
   }
 }
 //Romper ladrillos
-for (let i = 0; i < LADRILLO.F; i++) {
-  for (let j = 0; j < LADRILLO.C; j++) {
-      var estado = ladrillos[i][j];
+for (let m = 0; m < LADRILLO.F; m++) {
+  for (let n = 0; n < LADRILLO.C; n++) {
+      var estado = ladrillos[m][n];
       if(LADRILLO.visible == true){
         
       if( y2 > estado.y && y2 < estado.y+LADRILLO.w && x2 > estado.x && x2 < estado.x+LADRILLO.h ) {
