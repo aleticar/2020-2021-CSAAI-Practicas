@@ -201,9 +201,12 @@ for (let i = 0; i < LADRILLO.F; i++) {
 for (let i = 0; i < LADRILLO.F; i++) {
   for (let j = 0; j < LADRILLO.C; j++) {
       var estado = ladrillos[i][j];
-      if(ladrillos.visible == true){
-      if( y > estado.y && y < estado.y+LADRILLO.w && x > estado.x && x < estado.x+LADRILLO.h ) {
+      if(LADRILLO.visible == true){
+        
+      if( y2 > estado.y && y2 < estado.y+LADRILLO.w && x2 > estado.x && x2 < estado.x+LADRILLO.h ) {
         vely2 = -vely2;
+        y2 = y2 + vely2;
+        LADRILLO.visible == false;
     /*if(ladrillos[i][j].visible=true){
       if(ladrillos[i][j]==x2){
         ladrillos[i][j].visible = false;
