@@ -200,16 +200,20 @@ for (let i = 0; i < LADRILLO.F; i++) {
 //Romper ladrillos
 for (let i = 0; i < LADRILLO.F; i++) {
   for (let j = 0; j < LADRILLO.C; j++) {
-    if(ladrillos[i][j].visible=true){
+      var estado = ladrillos[i][j];
+      if(ladrillos.visible == true){
+      if( y > estado.y && y < estado.y+LADRILLO.w && x > estado.x && x < estado.x+LADRILLO.h ) {
+        vely2 = -vely2;
+    /*if(ladrillos[i][j].visible=true){
       if(ladrillos[i][j]==x2){
         ladrillos[i][j].visible = false;
 
-      }
+      }*/
       //
 
       //velx2 = -velx2;
       //vely2 = -vely2;
-
+    }
 
     }
 
