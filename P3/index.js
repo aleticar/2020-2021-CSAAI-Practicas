@@ -58,7 +58,7 @@ const LADRILLO = {
 };
 const p={
   Puntos:0,
-
+ vidas :3,
 }
 
 
@@ -82,8 +82,8 @@ window.onkeydown = (e)=> {
   
   if (e.keyCode==32){
     velx=25;
-    velx2 = 3;
-   vely2 = 3;
+    velx2 = 8;
+   vely2 = 8;
   }
 
   if(e.keyCode==37) {
@@ -167,7 +167,7 @@ ctx.fill();
 
 
 
-  if (y2 <= 0 || y2 > canvas.height-10) {
+  if (y2 <= 0|| y2 > canvas.height) {
     vely2 = -vely2;
   }
   y2 = y2 + vely2;
@@ -176,7 +176,20 @@ ctx.fill();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
+if(p.Puntos==115){
+  velx=0;
+  velx2 = 0;
+ vely2 = 0;
+ alert("Has ganado!!!");
 
+}
+if(p.vidas==0){
+  velx=0;
+  velx2 = 0;
+ vely2 = 0;
+ alert("Has perdido :(");
+
+}
 
 
 // (x,y)posicion  (largo,ancho)
@@ -197,6 +210,7 @@ function score(){
 ctx.font="20px arial"
 ctx.fillStyle="black" 
 ctx.fillText(("Puntos:" +p.Puntos),0,250)
+ctx.fillText(("Vidas:" +p.vidas),0,280)
 
 for (let i = 0; i < LADRILLO.F; i++) {
   for (let j = 0; j < LADRILLO.C; j++) {
@@ -211,14 +225,6 @@ for (let i = 0; i < LADRILLO.F; i++) {
       ctx.closePath();
       
     }
-     if (ladrillos[i][j].visible ==0) {
-      
-      ctx.beginPath();
-      ctx.rect(0, 0, 0, 0);
-      ctx.fillStyle = 'green';
-      
-      ctx.closePath();
-  }
 }
 }
 //Romper ladrillos
