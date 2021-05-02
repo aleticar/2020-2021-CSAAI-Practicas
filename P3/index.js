@@ -53,7 +53,7 @@ const LADRILLO = {
   origen_y: 40,
   padding: 5,
   Puntos:0,
- vidas:3,
+ vidas:5,
   visible: 1,
 };
 const p={
@@ -117,7 +117,7 @@ function update()
   
 
    // Para que rebote tanto a la izquierda como a la derecha
-   if (x < 0 || x >= (canvas.width - 20) ) {
+   if (x < 0 || x >= (canvas.width ) ) {
     velx = -velx;}
 
     
@@ -137,7 +137,7 @@ function update()
   
 
    // Para que rebote tanto a la izquierda como a la derecha
-   if (x2 < 0 || x2 >= (canvas.width - 20) ) {
+   if (x2 < 0 || x2 >= (canvas.width) ) {
     velx2 = -velx2;}
 
   //-- Algoritmo de animacion:
@@ -190,7 +190,21 @@ if(p.vidas==0){
  alert("Has perdido :(");
 
 }
-if(y2 <= 0 && x2 >= x ) {
+
+if(y2 + vely2 > canvas.height-10) {
+  if(x2 > x && x2 < x + canvas.width) {
+      vely2 = -vely2;
+  }
+  else {
+      p.vidas= p.vidas-1;
+      if(!p.vidas) {
+          alert("GAME OVER");
+          
+      }
+    }
+  }
+
+if(y2 ==400 && x2==x) {
 console.log("pierdes")
 }
 
