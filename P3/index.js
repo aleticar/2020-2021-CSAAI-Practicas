@@ -16,6 +16,7 @@ boton = document.getElementById("boton");
 boton2 = document.getElementById("boton2");
 boton3 = document.getElementById("boton3");
 boton4 = document.getElementById("boton4");
+Puntos = document.getElementById("puntos");
 
 let x = canvas.width/2.28;
 let y = 100;
@@ -41,14 +42,6 @@ boton2.onclick = () => {
  vely2 = 0;
 }
 //Boton para mover la barra a la izquierda
-boton3.onclick = () => {
-  x = x - velx;
-  console.log("Izquierda")
-}
-//Boton para mover a la derecha
-boton4.onclick = () => {
-  x = x + velx;
-}
 
 
 const LADRILLO = {
@@ -59,9 +52,14 @@ const LADRILLO = {
   origen_x: 40,
   origen_y: 40,
   padding: 5,
-
-  visible: true
+  Puntos:0,
+ vidas:3,
+  visible: 1,
 };
+const p={
+  Puntos:0,
+
+}
 
 
 const ladrillos = [];
@@ -84,8 +82,17 @@ window.onkeydown = (e)=> {
   
   if (e.keyCode==32){
     velx=25;
-    velx2 = 2;
-   vely2 = 2;
+    velx2 = 3;
+   vely2 = 3;
+  }
+
+  if(e.keyCode==37) {
+    x = x - velx;
+    console.log("Izquierda")
+  }
+  //Boton para mover a la derecha
+  if(e.keyCode==39) {
+    x = x + velx;
   }
 }
 
@@ -180,33 +187,58 @@ ctx.fillStyle="red";
 ctx.fill();
 //bordes
 //ctx.stroke();
+/*var Puntuación=0;
+function score(){
+  ctx.font="30px arial";
+  ctx.fillStyle="black";
+  
 
-
-
+}*/
+ctx.font="20px arial"
+ctx.fillStyle="black" 
+ctx.fillText(("Puntos:" +p.Puntos),0,250)
 
 for (let i = 0; i < LADRILLO.F; i++) {
   for (let j = 0; j < LADRILLO.C; j++) {
 
     //-- Si el ladrillo es visible se pinta
-    if (LADRILLO.visible==true) {
+    if (ladrillos[i][j].visible==1) {
+      
       ctx.beginPath();
       ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
       ctx.fillStyle = 'green';
       ctx.fill();
       ctx.closePath();
+      
     }
+     if (ladrillos[i][j].visible ==0) {
+      
+      ctx.beginPath();
+      ctx.rect(0, 0, 0, 0);
+      ctx.fillStyle = 'green';
+      
+      ctx.closePath();
   }
 }
+}
 //Romper ladrillos
-for (let m = 0; m < LADRILLO.F; m++) {
-  for (let n = 0; n < LADRILLO.C; n++) {
-      var estado = ladrillos[m][n];
-      if(LADRILLO.visible == true){
+for (let i = 0; i < LADRILLO.F; i++) {
+
+  for (let j = 0; j < LADRILLO.C; j++) {
+      var estado = ladrillos[i][j];
+      if(ladrillos[i][j].visible == 1){
         
       if( y2 > estado.y && y2 < estado.y+LADRILLO.w && x2 > estado.x && x2 < estado.x+LADRILLO.h ) {
         vely2 = -vely2;
+        
         y2 = y2 + vely2;
-        LADRILLO.visible == false;
+        
+        
+        ladrillos[i][j].visible = 0;
+        p.Puntos= p.Puntos +1;
+        console.log(p.Puntos);
+
+       
     /*if(ladrillos[i][j].visible=true){
       if(ladrillos[i][j]==x2){
         ladrillos[i][j].visible = false;
@@ -228,7 +260,4 @@ requestAnimationFrame(update);
 update();
 
 
-
-
-//-- Constantes de los ladrillos
 
