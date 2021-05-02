@@ -82,13 +82,13 @@ window.onkeydown = (e)=> {
   
   if (e.keyCode==32){
     velx=25;
-    velx2 = 8;
-   vely2 = 8;
+    velx2 = 3;
+   vely2 = 3;
   }
 
   if(e.keyCode==37) {
     x = x - velx;
-    console.log("Izquierda")
+   
   }
   //Boton para mover a la derecha
   if(e.keyCode==39) {
@@ -190,6 +190,9 @@ if(p.vidas==0){
  alert("Has perdido :(");
 
 }
+if(y2 <= 0 && x2 >= x ) {
+console.log("pierdes")
+}
 
 
 // (x,y)posicion  (largo,ancho)
@@ -223,6 +226,7 @@ for (let i = 0; i < LADRILLO.F; i++) {
       ctx.fillStyle = 'green';
       ctx.fill();
       ctx.closePath();
+     
       
     }
 }
