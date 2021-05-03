@@ -104,52 +104,6 @@ window.onkeydown = (e)=> {
 function update() 
 {
   
-  //-- Estructura de los ladrillos
- 
-
-  
-  //-- Dibujar ladrillos
-  
-  
-//Para que rebote
-  //if (x >= canvas.width) {
-   // velx = -velx;}
-  
-
-   // Para que rebote tanto a la izquierda como a la derecha
-   if (x < 0 || x >= (canvas.width ) ) {
-    velx = -velx;}
-
-    
-  //-- Algoritmo de animacion:
-  //-- 1) Actualizar posicion del  elemento
-  //-- (física del movimiento rectilineo uniforme)
-  //x = x + velx;
-
-
-
-//-- Funcion principal de animacion
-
-  
-//Para que rebote
-  //if (x >= canvas.width) {
-   // velx = -velx;}
-  
-
-   // Para que rebote tanto a la izquierda como a la derecha
-   if (x2 < 0 || x2 >= (canvas.width) ) {
-    velx2 = -velx2;}
-
-  //-- Algoritmo de animacion:
-  //-- 1) Actualizar posicion del  elemento
-  //-- (física del movimiento rectilineo uniforme)
-  x2 = x2 + velx2;
-
-
-  //-- 2) Borrar el canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-
 
 
 
@@ -159,10 +113,11 @@ ctx.rect(x, 390, 100, 10);
 ctx.fillStyle="red";
 //dar color
 ctx.fill();
+ctx.clearRect(0, 0, canvas.width, canvas.height); 
 //bordes
 //ctx.stroke();
 
-
+//paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight
 
 
 
@@ -170,6 +125,15 @@ ctx.fill();
   if (y2 <= 0|| y2 > canvas.height) {
     vely2 = -vely2;
   }
+  if (x < 0 || x >= (canvas.width ) ) {
+    velx = -velx;}
+
+  if (x2 < 0 || x2 >= (canvas.width) ) {
+    velx2 = -velx2;}
+  x2 = x2 + velx2;
+
+  if(x2 > x && y2 <=10) {
+    vely2 = -vely2;}
   y2 = y2 + vely2;
   
   //-- 2) Borrar el canvas
@@ -191,18 +155,16 @@ if(p.vidas==0){
 
 }
 
-if(y2 + vely2 > canvas.height-10) {
-  if(x2 > x && x2 < x + canvas.width) {
-      vely2 = -vely2;
-  }
-  else {
+
+ 
+  if(x2 ==0){
       p.vidas= p.vidas-1;
       if(!p.vidas) {
           alert("GAME OVER");
           
       }
     }
-  }
+  
 
 if(y2 ==400 && x2==x) {
 console.log("pierdes")
