@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 const display = document.getElementById("display");
 
 //-- Definir el tamaño del convas
-canvas.width = 800;
+canvas.width = 590;
 canvas.height = 400;
 
 //const raqueta = new Audio("P3_L9_pong-raqueta");
@@ -46,7 +46,7 @@ boton2.onclick = () => {
 
 const LADRILLO = {
   F: 5,  // Filas
-  C: 23,  // Columnas
+  C: 17,  // Columnas
   w: 30,
   h: 20,
   origen_x: 40,
@@ -132,15 +132,14 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
     velx2 = -velx2;}
   x2 = x2 + velx2;
 
-  if(x2 > x && y2 <=10) {
-    vely2 = -vely2;}
+ 
   y2 = y2 + vely2;
   
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
-if(p.Puntos==115){
+if(p.Puntos==85){
   velx=0;
   velx2 = 0;
  vely2 = 0;
