@@ -19,7 +19,7 @@ boton4 = document.getElementById("boton4");
 Puntos = document.getElementById("puntos");
 
 let x = canvas.width/2.28;
-let y = 100;
+let y = 390;
 
 //-- Velocidad horizontal del objeto
 let velx = 0;
@@ -108,7 +108,7 @@ function update()
 
 
 // (x,y)posicion  (largo,ancho)
-ctx.rect(x, 390, 100, 10);
+ctx.rect(x, y, 100, 10);
 
 ctx.fillStyle="red";
 //dar color
@@ -122,18 +122,36 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
 
-  if (y2 <= 0|| y2 > canvas.height) {
-    vely2 = -vely2;
-  }
+  
   if (x < 0 || x >= (canvas.width ) ) {
     velx = -velx;}
-
+// pareed dercha e izq
   if (x2 < 0 || x2 >= (canvas.width) ) {
     velx2 = -velx2;}
   x2 = x2 + velx2;
 
- 
+ if (y2 <= 0|| y2 >= canvas.height-10) {
+  
+  
+  if( y2 > y&&y2 < y+10 && x2 <x+100&&x2 > x ){
+    console.log("Raqueta")
+    vely2 = -vely2;
+
+
+  }
+  else{
+    p.vidas= p.vidas-1;
+    console.log("vida")
+    vely2 = -vely2;
+  }
+}
+  
+
   y2 = y2 + vely2;
+  /*else{
+    p.vidas= p.vidas-1;
+    y2 > y && y2 < y+10 && x2 > x && x2 < x+100
+  }*/
   
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -154,20 +172,6 @@ if(p.vidas==0){
 
 }
 
-
- 
-  if(x2 ==0){
-      p.vidas= p.vidas-1;
-      if(!p.vidas) {
-          alert("GAME OVER");
-          
-      }
-    }
-  
-
-if(y2 ==400 && x2==x) {
-console.log("pierdes")
-}
 
 
 // (x,y)posicion  (largo,ancho)
