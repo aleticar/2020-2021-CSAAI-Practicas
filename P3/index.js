@@ -13,6 +13,8 @@ canvas.height = 400;
 const perder = new Audio('perder.mp3');
 const ladrillo = new Audio('ladrillo.mp3');
 const ambiente = new Audio('ambiente.mp3');
+const rebote = new Audio('rebote.mp3');
+const vida = new Audio('vida.mp3');
 
 const ctx = canvas.getContext("2d");
 boton = document.getElementById("boton");
@@ -141,13 +143,16 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
   if( y2 > y&&y2 < y+10 && x2 <x+100&&x2 > x ){
     console.log("Raqueta")
     vely2 = -vely2;
-
+    rebote.volume=0.05;
+        rebote.play();
 
   }
   else{
     p.vidas= p.vidas-1;
     console.log("vida")
     vely2 = -vely2;
+    vida.volume=0.05;
+        vida.play();
   }
 }
   
