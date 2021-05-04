@@ -10,6 +10,9 @@ canvas.height = 400;
 //const raqueta = new Audio("P3_L9_pong-raqueta");
 //const rebote = new Audio("P3_L9_pong-rebote");
 
+const perder = new Audio('perder.mp3');
+const ladrillo = new Audio('ladrillo.mp3');
+const ambiente = new Audio('ambiente.mp3');
 
 const ctx = canvas.getContext("2d");
 boton = document.getElementById("boton");
@@ -84,6 +87,8 @@ window.onkeydown = (e)=> {
     velx=25;
     velx2 = 3;
    vely2 = 3;
+   ambiente.volume=0.05;
+        ambiente.play();
   }
 
   if(e.keyCode==37) {
@@ -168,6 +173,7 @@ if(p.vidas==0){
   velx=0;
   velx2 = 0;
  vely2 = 0;
+ perder.play();
  alert("Has perdido :(");
 
 }
@@ -225,6 +231,8 @@ for (let i = 0; i < LADRILLO.F; i++) {
         
         ladrillos[i][j].visible = 0;
         p.Puntos= p.Puntos +1;
+        ladrillo.volume=0.05;
+        ladrillo.play();
         console.log(p.Puntos);
 
        
