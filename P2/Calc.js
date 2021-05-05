@@ -22,8 +22,12 @@ clear:document.getElementById("clear"),*/
 boton0 = document.getElementById("boton0")
 coma=document.getElementById("coma")
 ans=document.getElementById("ans")
+
 resta = document.getElementById("resta")
 suma = document.getElementById("suma")
+multi = document.getElementById("multi")
+div = document.getElementById("div")
+
 igual=document.getElementById("equal")
 eliminar=document.getElementById("eliminar")
 clear=document.getElementById("clear")
@@ -126,7 +130,14 @@ suma.onclick = () => {
 resta.onclick = () => {
   display.innerHTML += "-";
 }
+multi.onclick = () => {
+  display.innerHTML += "*";
+}
 
+
+div.onclick = () => {
+  display.innerHTML += "/";
+}
 coma.onclick = () => {
   display.innerHTML += ".";
 }
@@ -144,73 +155,3 @@ eliminar.onclick = () => {
   display.innerHTML = display.innerHTML.slice(0,-1);;
 }
 
-
-
-
-
-
-//posiciones
-/*
-const RESULT={
-Inicio:0,
-numero1:1,
-operacion:2,
-numero2:3,
-}
-
-let resultado=RESULT.Inicio;
-//-- Manejador de posiciones
-function operar(digito){
-    //depeende de lo que llegue a la funcion opera de una manera u otra
-    if (resultado == RESULT.Inicio) {
-        display.innerHTML = digito;
-        resultado == RESULT.numero1;
-      }else if (resultado == RESULT.numero1){
-        display.innerHTML += digito;
-      }else if (resultado == RESULT.operacion) {
-        display.innerHTML += digito;
-        resultado == RESULT.numero2;
-      }else if (resultado == RESULT.numero2){
-        display.innerHTML += digito;
-      }
-
-}
-
-//Bucle
-for (i=0; i<numeros.length; i++){
-    numeros[i].onclick = (ev)=>{
-      operar(ev.target.value);
-    }
-  }
-  
-  let opera = document.getElementsByClassName("operador");
-  //bucle de operaciones
-  for (i=0; i<opera.length; i++){
-    opera[i].onclick = (ev)=>{
-      if(resultado == RESULT.numero1){
-             display.innerHTML += ev.target.value;
-             resultado = RESULT.operacion;
-           }
-        }
-  }
-  
-  
-  //coger el digito del boton
-  igual.onclick = () => {
-    if(resultado == RESULT.numero1 ||  resultado == RESULT.numero2){
-       display.innerHTML = eval(display.innerHTML);
-       resultado = RESULT.numero1;
-     }
-   }
-   
-   // Borrar 
-   clear.onclick = () => {
-    display.innerHTML = "0";
-  }
-   
-   //Reiniciar a 0
-   /*igual.onclick = () => {
-     display.innerHTML = "0";
-       console.log("clear");
-       resultado = RESULT.Inicio;
-   }*/
