@@ -20,7 +20,7 @@ boton9 = document.getElementById("boton9")
 /*delet:document.getElementById("delete"),
 clear:document.getElementById("clear"),*/
 boton0 = document.getElementById("boton0")
-exp=document.getElementById("exp")
+coma=document.getElementById("coma")
 ans=document.getElementById("ans")
 resta = document.getElementById("resta")
 suma = document.getElementById("suma")
@@ -125,6 +125,10 @@ suma.onclick = () => {
 
 resta.onclick = () => {
   display.innerHTML += "-";
+}
+
+coma.onclick = () => {
+  display.innerHTML += ".";
 }
 
 //-- Evaluar la expresion
