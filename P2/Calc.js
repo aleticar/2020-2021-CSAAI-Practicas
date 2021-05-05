@@ -8,14 +8,24 @@ display = document.getElementById("display")
 boton = document.getElementById("boton")
 boton1 = document.getElementById("boton1")
 boton2 = document.getElementById("boton2")
+boton3 = document.getElementById("boton3")
+
+boton4 = document.getElementById("boton4")
+boton5 = document.getElementById("boton5")
+boton6 = document.getElementById("boton6")
+
+boton7 = document.getElementById("boton7")
+boton8 = document.getElementById("boton8")
+boton9 = document.getElementById("boton9")
 /*delet:document.getElementById("delete"),
 clear:document.getElementById("clear"),*/
+boton0 = document.getElementById("boton0")
 exp=document.getElementById("exp")
 ans=document.getElementById("ans")
-
+resta = document.getElementById("resta")
 suma = document.getElementById("suma")
 igual=document.getElementById("equal")
-delet=document.getElementById("delete")
+eliminar=document.getElementById("eliminar")
 clear=document.getElementById("clear")
 
 
@@ -77,10 +87,44 @@ boton1.onclick = () => {
 boton2.onclick = () => {
   display.innerHTML += "2";
 }
+boton3.onclick = () => {
+  display.innerHTML += "3";
+}
+
+boton4.onclick = () => {
+  display.innerHTML += "4";
+}
+
+//-- Insertar digito 2
+boton5.onclick = () => {
+  display.innerHTML += "5";
+}
+boton6.onclick = () => {
+  display.innerHTML += "6";
+}
+
+boton9.onclick = () => {
+  display.innerHTML += "9";
+}
+
+boton0.onclick = () => {
+  display.innerHTML += "0";
+}
+//-- Insertar digito 2
+boton7.onclick = () => {
+  display.innerHTML += "7";
+}
+boton8.onclick = () => {
+  display.innerHTML += "8";
+}
 
 //-- Insertar simbolo de sumar
 suma.onclick = () => {
   display.innerHTML += "+";
+}
+
+resta.onclick = () => {
+  display.innerHTML += "-";
 }
 
 //-- Evaluar la expresion
@@ -92,6 +136,10 @@ igual.onclick = () => {
 clear.onclick = () => {
   display.innerHTML = "";
 }
+eliminar.onclick = () => {
+  display.innerHTML = display.innerHTML.slice(0,-1);;
+}
+
 
 
 
