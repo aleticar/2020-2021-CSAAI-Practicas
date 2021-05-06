@@ -24,7 +24,7 @@ img.onload = function () {
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
-  //ctx.drawImage(img, 800,0);
+  ctx.drawImage(img, 0,0);
 
   console.log("Imagen lista...");
 };
