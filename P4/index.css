@@ -6,3 +6,11 @@ body{
 
     color: blanchedalmond;
 }
+.imagen{
+    float: left; margin: 0px 15px 15px 100px;}
+
+    .izq{
+        color: blanchedalmond;
+        text-align: left;
+    }
+

@@ -24,7 +24,7 @@ img.onload = function () {
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
-  ctx.drawImage(img, 0,0);
+  //ctx.drawImage(img, 800,0);
 
   console.log("Imagen lista...");
 };
@@ -49,7 +49,7 @@ deslizador.oninput = () => {
   umbral = deslizador.value
 
   //-- Filtrar la imagen según el nuevo umbral
-  for (let i = 0; i < data.length; i+=4) {
+  for (let i = 0; i < data.length; i+=1) {
     if (data[i] > umbral)
       data[i] = umbral;
   }
