@@ -13,6 +13,7 @@ const deslizador3 = document.getElementById('deslizador3');
 const range_value1 = document.getElementById('range_value1');
 const range_value2 = document.getElementById('range_value2');
 const range_value3 = document.getElementById('range_value3');
+grises=document.getElementById('boton');
 
 
 img.onload = function () {
@@ -77,6 +78,35 @@ deslizador2.oninput = () => {
   ctx.putImageData(imgData, 0, 0);
 
 }
+
+deslizador3.oninput = () => {
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data
+  var umbral3 = deslizador3.value
+  for (let i = 0; i < data.length; i+=4) {
+
+    if (data[i+1] > umbral3){
+      data[i+1] = umbral3;
+    }
+
+  }
+  range_value3.innerHTML = deslizador3.value;
+  ctx.drawImage(img, 0,0);
+  ctx.putImageData(imgData, 0, 0);
+
+}
+
+grises.onclick = () => {
+  var gris= 0;
+  let imgData = ctx.getImageData(0,0,canvas.width, canvas.height);
+  let data = imgData.data;
+  for (let i = 0; i < data.length; i+=4) {
+    gris = (3*data[i] + 4*data[i+1]+ data[i+2])/8
+    data[i] = data[i+1] = data[i+2] = gris;
+  }
+  ctx.putImageData(imgData, 0,0);
+}
+  
 
 
 
