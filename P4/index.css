@@ -11,12 +11,12 @@ body{
 
     .izq{
         color: blanchedalmond;
-        text-align: left;
-        margin: 15px 0px 0px 100px;
+        
+        margin: 10px 0px 0px 100px;
     }
     .izqq{
         color: blanchedalmond;
-        text-align: left;
-        margin: 15px 150px 0px 1000px;
+        
+        margin: -20px 0px 0px -1000px;
     }
 
