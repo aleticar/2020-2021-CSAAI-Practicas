@@ -13,7 +13,8 @@ const deslizador3 = document.getElementById('deslizador3');
 const range_value1 = document.getElementById('range_value1');
 const range_value2 = document.getElementById('range_value2');
 const range_value3 = document.getElementById('range_value3');
-grises=document.getElementById('boton');
+grises=document.getElementById('boton1');
+colores = document.getElementById('boton2');
 
 
 img.onload = function () {
@@ -101,12 +102,15 @@ grises.onclick = () => {
   let imgData = ctx.getImageData(0,0,canvas.width, canvas.height);
   let data = imgData.data;
   for (let i = 0; i < data.length; i+=4) {
-    gris = (3*data[i] + 4*data[i+1]+ data[i+2])/8
-    data[i] = data[i+1] = data[i+2] = gris;
+    gris = (3*data[i] + 4*data[i+1]+ data[i+2])/8// entre 8 para obtener la escala de grises
+    data[i] = data[i+1] = data[i+2] = gris; // para que cada pixel sea igual a grises
   }
   ctx.putImageData(imgData, 0,0);
 }
-  
+colores.onclick = () => {
+  let imgData = ctx.getImageData(0,0,canvas.width, canvas.height);
+  ctx.drawImage(img, 0,0);
+}
 
 
 
