@@ -8,16 +8,17 @@ const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
 
 //-- Establecer las dimensiones de los vídeos
-directo.width=420;
-directo.height=200;
-video1.width=200;  
-video1.height=100;
-video2.width=200;  
-video2.height=100;
+directo.width=840;
+directo.height=400;
+video1.width=400;  
+video1.height=200;
+video2.width=400;  
+video2.height=200;
 url1="https://github.com/aleticar/videos/raw/main/BLOOPERS%20NBA%20-%20STEPHEN%20CURRY%20EN%201%20MINUTO%20(1).mp4";
 url2="https://github.com/aleticar/videos/raw/main/BLOOPERS%20NBA_%20LeBron%20James%20en%201%20minuto%20(1).mp4"
 //-- Imagen de Test usada
 const TEST_IMAGE_URL = "test.png";
+const señal = new Audio('videoplayback.m4a');
 
 //-- Imagen estática a mostrar cuando el video no
 //-- ha arrancado
@@ -35,6 +36,8 @@ btn_src_off.onclick = () => {
     video1.src = null;
     video2.poster=TEST_IMAGE_URL;
     video2.src = null;
+    señal.volume=0.05;
+        señal.play();
   };
 
 
