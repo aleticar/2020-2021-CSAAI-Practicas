@@ -61,15 +61,14 @@ function number(digito)
   }
   else {
        
-        //--En cualquier otro estado lo añadimos
-        display.innerHTML += ev.target.value;
+    //--En cualquier otro estado lo añadimos
+    display.innerHTML += ev.target.value;
 
-        //-- Y nos quedamos en el mismo estado
-        //-- Ojo! Este ejemplo sólo implementa el primer
-        //-- estado del diagrama. Habría que tener en 
-        //-- cuenta el resto... lo debes hacer en tu práctica
-    } 
-
+    //-- Y nos quedamos en el mismo estado
+    //-- Ojo! Este ejemplo sólo implementa el primer
+    //-- estado del diagrama. Habría que tener en 
+    //-- cuenta el resto... lo debes hacer en tu práctica
+}
 
 
 }
