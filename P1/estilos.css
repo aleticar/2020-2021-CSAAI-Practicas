@@ -8,6 +8,7 @@ body{
     padding: 10px;
     margin: 0px;
     text-align: center;
+    /*Uso de la imagen(de fondo)*/
     background-image: url("goku.jpg");
     }
 .h2{
