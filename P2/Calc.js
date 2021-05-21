@@ -31,7 +31,8 @@ div = document.getElementById("div")
 igual=document.getElementById("equal")
 eliminar=document.getElementById("eliminar")
 clear=document.getElementById("clear")
-
+let digitos = document.getElementsByClassName("numeros")
+let operaciones =document.getElementsByClassName("butto2")
 
 
 const RESULT = {
@@ -50,36 +51,42 @@ function number(digito)
   //-- Segun el estado hacemos una cosa u otra
   if (estado == RESULT.INIT) {
     display.innerHTML = digito;
-    estado == RESULT.OP1;
-  }else if (estado == RESULT.OP1){
+    estado == RESULT.OP1;}
+  else if (estado == RESULT.OP1){
     display.innerHTML += digito;
   }else if (estado== RESULT.OPERATION) {
     display.innerHTML += digito;
-    estado == RESULT.numero2;
+    estado == RESULT.OP2;
   }else if (estado == RESULT.OP2){
     display.innerHTML += digito;
+    estado == RESULT.INIT;
   }
-  else {
-       
-    //--En cualquier otro estado lo añadimos
-    display.innerHTML += ev.target.value;
+  for (i=0; i<operaciones.length; i++){
+    operaciones[i].onclick = (ev)=>{
+      if(estado == RESULT.OP1){
+             display.innerHTML += ev.target.value;
+             estado = RESULT.OPERATION;
+           }
+        }
+  }
+}
 
-    //-- Y nos quedamos en el mismo estado
-    //-- Ojo! Este ejemplo sólo implementa el primer
-    //-- estado del diagrama. Habría que tener en 
-    //-- cuenta el resto... lo debes hacer en tu práctica
+for  ( i = 0 ;  i < digitos . length ;  i ++ ) {
+  digitos [ i ] . onclick  =  ( ev )  => {
+    number ( ev.target.value ) ;
+  } 
 }
 
 
-}
-numeros  = document.getElementsByClassName("numeros");
+
+/* numeros  = document.getElementsByClassName("numeros");
 
 for (let boton of numeros) {
 
   //-- Se ejecuta cuando se pulsa un boton
   //-- que es un dígito
   boton.onclick = numeros;
-  }
+  } */
 
 
 boton1.onclick = () => {
@@ -98,7 +105,7 @@ boton4.onclick = () => {
   display.innerHTML += "4";
 }
 
-//-- Insertar digito 2
+//-- Insertar digitos
 boton5.onclick = () => {
   display.innerHTML += "5";
 }
@@ -113,7 +120,7 @@ boton9.onclick = () => {
 boton0.onclick = () => {
   display.innerHTML += "0";
 }
-//-- Insertar digito 2
+
 boton7.onclick = () => {
   display.innerHTML += "7";
 }
@@ -121,7 +128,7 @@ boton8.onclick = () => {
   display.innerHTML += "8";
 }
 
-//-- Insertar simbolo de sumar
+//-- Insertar simbolo de suma resta...
 suma.onclick = () => {
   display.innerHTML += "+";
 }
@@ -141,15 +148,16 @@ coma.onclick = () => {
   display.innerHTML += ".";
 }
 
-//-- Evaluar la expresion
+//-- Evaluar operacion
 igual.onclick = () => {
   display.innerHTML = eval(display.innerHTML);
 }
 
-//-- Poner a cero la expresion
+//-- Poner a cero 
 clear.onclick = () => {
   display.innerHTML = "";
 }
+//elimina el digito anterior
 eliminar.onclick = () => {
   display.innerHTML = display.innerHTML.slice(0,-1);;
 }
