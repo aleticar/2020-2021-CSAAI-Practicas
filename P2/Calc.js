@@ -54,12 +54,14 @@ function number(digito)
     estado == RESULT.OP1;}
   else if (estado == RESULT.OP1){
     display.innerHTML += digito;
-  }else if (estado== RESULT.OPERATION) {
+  }
+  else if (estado== RESULT.OPERATION) {
     display.innerHTML += digito;
     estado == RESULT.OP2;
-  }else if (estado == RESULT.OP2){
+  }
+  else if (estado == RESULT.OP2){
     display.innerHTML += digito;
-    estado == RESULT.INIT;
+
   }
   for (i=0; i<operaciones.length; i++){
     operaciones[i].onclick = (ev)=>{
@@ -131,6 +133,7 @@ boton8.onclick = () => {
 //-- Insertar simbolo de suma resta...
 suma.onclick = () => {
   display.innerHTML += "+";
+  estado = RESULT.OPERATION;
 }
 
 resta.onclick = () => {
@@ -150,12 +153,16 @@ coma.onclick = () => {
 
 //-- Evaluar operacion
 igual.onclick = () => {
-  display.innerHTML = eval(display.innerHTML);
+  
+    display.innerHTML = eval(display.innerHTML);
+    estado = RESULT.OP1;
+  
 }
 
 //-- Poner a cero 
 clear.onclick = () => {
   display.innerHTML = "";
+  estado = RESULT.INIT
 }
 //elimina el digito anterior
 eliminar.onclick = () => {
