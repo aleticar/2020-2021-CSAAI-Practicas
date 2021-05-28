@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 const display = document.getElementById("display");
 
 //-- Definir el tamaño del convas
-canvas.width = 590;
+canvas.width = 522;
 canvas.height = 400;
 
 //const raqueta = new Audio("P3_L9_pong-raqueta");
