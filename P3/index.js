@@ -41,11 +41,11 @@ let vely2 = 0;
  vely2 = 2;
 }*/
 //Parar
-boton2.onclick = () => {
+/* boton2.onclick = () => {
   velx=0;
   velx2 = 0;
  vely2 = 0;
-}
+} */
 //Boton para mover la barra a la izquierda
 
 
