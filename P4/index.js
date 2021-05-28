@@ -86,8 +86,8 @@ deslizador3.oninput = () => {
   var umbral3 = deslizador3.value
   for (let i = 0; i < data.length; i+=4) {
 
-    if (data[i+1] > umbral3){
-      data[i+1] = umbral3;
+    if (data[i+2] > umbral3){
+      data[i+2] = umbral3;
     }
 
   }
