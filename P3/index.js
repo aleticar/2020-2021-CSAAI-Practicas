@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 const display = document.getElementById("display");
 
 //-- Definir el tamaño del convas
-canvas.width = 522;
+canvas.width = 520;
 canvas.height = 400;
 
 //const raqueta = new Audio("P3_L9_pong-raqueta");
@@ -136,7 +136,10 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
   if (x2 < 0 || x2 >= (canvas.width) ) {
     velx2 = -velx2;}
   x2 = x2 + velx2;
-
+  if (y2 <=5){
+    vely2 = -vely2;
+    console.log("holaaaaa")
+  }
  if (y2 <= 0|| y2 >= canvas.height-10) {
   
   
@@ -147,10 +150,12 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
         rebote.play();
 
   }
+ 
   else{
     p.vidas= p.vidas-1;
     console.log("vida")
-    vely2 = -vely2;
+    vely2 = -1.05*vely2;
+    velx2 = 1.05*velx2
     vida.volume=0.05;
         vida.play();
   }
@@ -167,7 +172,7 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
-if(p.Puntos==85){
+if(p.Puntos==75){
   velx=0;
   velx2 = 0;
  vely2 = 0;
