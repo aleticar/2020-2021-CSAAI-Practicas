@@ -155,7 +155,7 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
     p.vidas= p.vidas-1;
     console.log("vida")
     vely2 = -1.05*vely2;
-    velx2 = 1.05*velx2
+    velx2 = 1.1*velx2
     vida.volume=0.05;
         vida.play();
   }
@@ -177,6 +177,8 @@ if(p.Puntos==75){
   velx2 = 0;
  vely2 = 0;
  alert("Has ganado!!!");
+ ambiente.volume=0.05;
+        ambiente.play();
 
 }
 if(p.vidas==0){
@@ -189,13 +191,15 @@ if(p.vidas==0){
 }
 
 
-
+if (velx==25){
+  ctx.beginPath;
 // (x,y)posicion  (largo,ancho)
 ctx.arc(x2, y2, 10, 0, 2 * Math.PI);
 
 ctx.fillStyle="red";
 //dar color
 ctx.fill();
+ctx.closePath;}
 //bordes
 //ctx.stroke();
 /*var Puntuación=0;
@@ -205,10 +209,12 @@ function score(){
   
 
 }*/
+ctx.beginPath;
 ctx.font="20px arial"
 ctx.fillStyle="black" 
 ctx.fillText(("Puntos:" +p.Puntos),0,250)
 ctx.fillText(("Vidas:" +p.vidas),0,280)
+ctx.closePath;
 
 for (let i = 0; i < LADRILLO.F; i++) {
   for (let j = 0; j < LADRILLO.C; j++) {
