@@ -31,7 +31,7 @@ div = document.getElementById("div")
 igual=document.getElementById("equal")
 eliminar=document.getElementById("eliminar")
 clear=document.getElementById("clear")
-let digitos = document.getElementsByClassName("numeros")
+let digitos = document.getElementsByClassName("butto")
 let operaciones =document.getElementsByClassName("butto2")
 
 
@@ -40,11 +40,28 @@ const RESULT = {
   OP1: 1,
   OPERATION: 2,
   OP2: 3,
+  coma:4,
 }
 
 //-- Variable de estado
 //-- Por defecto su valor será el del estado inicial
 let estado = RESULT.INIT;
+
+for (i =0 ; i<digitos.length; i ++ ) {
+  digitos[i].onclick = (ev) => {
+    number(ev.target.value) ;
+  } 
+}
+
+for (i=0; i<operaciones.length; i++){
+  operaciones[i].onclick = (ev)=>{
+    if(estado == RESULT.OP1){
+           display.innerHTML += ev.target.value;
+           estado = RESULT.OPERATION;
+         }
+      }
+}
+
 
 function number(digito)
 {
@@ -63,21 +80,9 @@ function number(digito)
     display.innerHTML += digito;
 
   }
-  for (i=0; i<operaciones.length; i++){
-    operaciones[i].onclick = (ev)=>{
-      if(estado == RESULT.OP1){
-             display.innerHTML += ev.target.value;
-             estado = RESULT.OPERATION;
-           }
-        }
-  }
+
 }
 
-for  ( i = 0 ;  i < digitos . length ;  i ++ ) {
-  digitos [ i ] . onclick  =  ( ev )  => {
-    number ( ev.target.value ) ;
-  } 
-}
 
 
 
@@ -91,64 +96,18 @@ for (let boton of numeros) {
   } */
 
 
-boton1.onclick = () => {
-  display.innerHTML += "1";
-}
 
-//-- Insertar digito 2
-boton2.onclick = () => {
-  display.innerHTML += "2";
-}
-boton3.onclick = () => {
-  display.innerHTML += "3";
-}
-
-boton4.onclick = () => {
-  display.innerHTML += "4";
-}
-
-//-- Insertar digitos
-boton5.onclick = () => {
-  display.innerHTML += "5";
-}
-boton6.onclick = () => {
-  display.innerHTML += "6";
-}
-
-boton9.onclick = () => {
-  display.innerHTML += "9";
-}
-
-boton0.onclick = () => {
-  display.innerHTML += "0";
-}
-
-boton7.onclick = () => {
-  display.innerHTML += "7";
-}
-boton8.onclick = () => {
-  display.innerHTML += "8";
-}
 
 //-- Insertar simbolo de suma resta...
-suma.onclick = () => {
-  display.innerHTML += "+";
-  estado = RESULT.OPERATION;
-}
 
-resta.onclick = () => {
-  display.innerHTML += "-";
-}
-multi.onclick = () => {
-  display.innerHTML += "*";
-}
-
-
-div.onclick = () => {
-  display.innerHTML += "/";
-}
-coma.onclick = () => {
-  display.innerHTML += ".";
+coma.onclick = (ev) => {
+  if(RESULT.coma=false){
+    console.log("Error!!");
+  }else{
+    display.innerHTML += ev.target.value;
+    RESULT.COMA = false;
+  }
+ 
 }
 
 //-- Evaluar operacion
