@@ -1,5 +1,5 @@
  # Práctica 3
-Juego básico hecho. Dale al espacio y comenzará la diverisión!!!
+Juego básico hecho. Dale al espacio y aparecerá la bola y la barra.
 
 He añadido sonidos: a la pelota, al rebotar, al hacer un punto y al perder.
 
